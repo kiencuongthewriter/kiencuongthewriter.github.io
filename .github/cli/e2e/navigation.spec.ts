@@ -4,8 +4,8 @@ import { openMobileMenu } from './support/helpers';
 test.describe('Navigation and Routing @desktop', () => {
   test('should load home page successfully', async ({ page }) => {
     await page.goto('/');
-    await expect(page).toHaveTitle(/Type on Strap/);
-  });
+    await expect(page).toHaveTitle(/Kien Cuong - Writer Blog/);
+ });
 
   test('should navigate to about page', async ({ page }) => {
     await page.goto('/');
