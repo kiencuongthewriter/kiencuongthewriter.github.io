@@ -8,7 +8,7 @@ layout: default
                 <div class="feature-image-padding"></div>
             {% else %}
                 <h1 id="{{ page.title | cgi_escape }}" class="title">{{ page.title }}</h1>
-                {% include blog/post_info.liquid author=page.author date=page.date last_modified=page.last_modified %}
+                {% include blog/post_info.liquid author=page.author artist=page.artist date=page.date last_modified=page.last_modified %}
             {% endif %}
         </div>
     </header>
@@ -18,6 +18,8 @@ layout: default
         {{ content }}
         {% if page.bootstrap %}</div>{% endif %}
     </section>
+
+
 
     <!-- Social media shares -->
     {% include social/share_buttons.liquid %}

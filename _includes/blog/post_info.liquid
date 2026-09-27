@@ -1,26 +1,68 @@
 {% assign author = site.data.authors[include.author] %}
+{% assign artist = site.data.authors[include.artist] %}
 {% assign date = include.date | default: "today" | date: site.data.language.str_date_format | default: '%B %-d, %Y' %}
 
 <div class="post-info">
   <div class="post-meta">
+
     {% if author %}
       <div class="author-info">
-        {%- if author.url -%}<a href="{{ author.url | relative_url }}" target="_blank" rel="noopener">{%- endif -%}
-          {% if author.avatar  %}
+        {% if author.url %}
+          <a href="{{ author.url | relative_url }}" target="_blank" rel="noopener">
+        {% endif %}
+
+          {% if author.avatar %}
             <img alt="Author's avatar" src="{{ author.avatar | relative_url }}" loading="lazy">
           {% endif %}
+
           <p class="meta">
-            {% if author.name %}{{ author.name }}{% endif %}
+            {{ author.name }}
           </p>
-        {%- if author.url -%}</a>{%- endif -%}
+
+        {% if author.url %}
+          </a>
+        {% endif %}
       </div>
+
       <span class="meta-separator">-</span>
     {% endif %}
+
+    {% if artist %}
+      <div class="author-info">
+        {% if artist.url %}
+          <a href="{{ artist.url | relative_url }}" target="_blank" rel="noopener">
+        {% endif %}
+
+          {% if artist.avatar %}
+            <img alt="Artist's avatar" src="{{ artist.avatar | relative_url }}" loading="lazy">
+          {% endif %}
+
+          <p class="meta">
+            {{ artist.name }}
+          </p>
+
+        {% if artist.url %}
+          </a>
+        {% endif %}
+      </div>
+
+      <span class="meta-separator">-</span>
+    {% endif %}
+
     {% assign date_month = date | date: "%m" | minus: 1 %}
-    <p class="meta">{{ site.data.language.str_months[date_month] | default: date | date: "%B" }} {{ date | date: "%d, %Y" }}</p>
+    <p class="meta">
+      {{ site.data.language.str_months[date_month] | default: date | date: "%B" }}
+      {{ date | date: "%d, %Y" }}
+    </p>
+
   </div>
+
   {% if include.last_modified %}
     {% assign last_modified_month = include.last_modified | date: "%m" | minus: 1 %}
-    <p class="last-modified">{{ site.data.language.str_last_modified | default: "Last modified on" }} {{ site.data.language.str_months[last_modified_month] | default: include.last_modified | date: "%B" }} {{ include.last_modified | date: "%d, %Y" }}</p>
+    <p class="last-modified">
+      {{ site.data.language.str_last_modified | default: "Last modified on" }}
+      {{ site.data.language.str_months[last_modified_month] | default: include.last_modified | date: "%B" }}
+      {{ include.last_modified | date: "%d, %Y" }}
+    </p>
   {% endif %}
 </div>

@@ -1,0 +1,15 @@
+<aside class="blog-sidebar">
+  <h3>Blog Posts</h3>
+
+  <ul>
+    {% assign posts = site.posts | sort: "date" | reverse %}
+
+    {% for post in posts %}
+      <li>
+        <a href="{{ post.url | relative_url }}">
+          {{ post.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</aside>
