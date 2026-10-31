@@ -3,7 +3,7 @@
 
 # Disqus configuration
 disqus:
-  shortname:                    # Your Disqus shortname
+  shortname: kiencuongthewriter-main
 
 # Cusdis configuration  
 cusdis:
