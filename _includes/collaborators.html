@@ -1,0 +1,42 @@
+
+<!-- Collaborators Grid -->
+
+<div class="collaborators-grid">
+
+  {% assign collaborators = site.collaborators %}
+
+  {% if collaborators.size > 0 %}
+
+    {% for person in collaborators %}
+
+      <div class="collaborator-card">
+
+        <a href="{{ person.website | default: '#' }}"
+           target="_blank"
+           rel="noopener noreferrer">
+
+          <img
+            src="{{ person.img | relative_url }}"
+            alt="{{ person.title }}"
+            class="collaborator-image"
+            loading="lazy">
+
+          <h3>{{ person.title }}</h3>
+
+        </a>
+
+        {% if person.role %}
+          <p>{{ person.role }}</p>
+        {% endif %}
+
+      </div>
+
+    {% endfor %}
+
+  {% else %}
+
+    <p>No collaborators found. Check your Jekyll collection settings.</p>
+
+  {% endif %}
+
+</div>

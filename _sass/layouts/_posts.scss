@@ -159,19 +159,12 @@ header {
 }
 
 /*-- feature-image Responsive scrolling --*/
+/*-- feature-image: full-width banner, no zoom --*/
 .feature-image header {
-  @media screen and (min-width: $break) {
-    background-size: 120% auto;
-  }
-
-  @media screen and (max-width: $break) {
-    padding: $padding-large*1.5 $padding-small;
-    background-size: 200% auto;
-  }
-
-  @media screen and (max-width: $sm-break) {
-    background-size: 400% auto;
-  }
+  background-size: 100% auto !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  min-height: 300px;
 }
 
 .post-content {

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: My Collaborators
+title: Galleries
 subtitle: (UNDER CONSTRUCTION)
 permalink: /gallery/
 gallery_path: "assets/img/pexels"
@@ -9,6 +9,6 @@ position: 3
 tags: [Page]
 ---
 
-The talented artists I've had the pleasure to work with. The friends and family I've relied on for wisdom, beta-reading and feedback. I appreciate you all. 
+I'm under construction. Please look out for debris.
 
 {% include gallery.html gallery_path=page.gallery_path %}
